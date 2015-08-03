@@ -12,13 +12,16 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            SquareMatrix<int> matrix = new SquareMatrix<int>( new int[,] {
-            {1,0},{0,2}});
+           // SquareMatrix<int> matrix = new SymmetricalMatrix<int>( new int[,] {
+            //{1,0},{0,2}});
+            SquareMatrix<int> matrix = new DiagonalMatrix<int>(new int[] { 1, 2 });
 
+            System.Console.Write(matrix);
             CheckEvet check = new CheckEvet();
             check.Register(matrix);
             matrix[0, 0] = 2;
-            matrix[0, 1] = 3;
+            matrix[1, 1] = 3;
+            System.Console.Write(matrix);
 
             /*SquareMatrix<int> dmatrix = new DiagonalMatrix<int>(2, new int[] { 1, 2 });
             SquareMatrix<int> smatrix = new SymmetricalMatrix<int>(new int[,] {

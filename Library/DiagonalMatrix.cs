@@ -13,19 +13,16 @@ namespace Library
         {
         }
 
-        public DiagonalMatrix(int order, T[] array)
+        public DiagonalMatrix(T[] array)
         {
             if(array == null)
             {
                 throw new ArgumentNullException("Array.");
             }
-            if (order != array.Length)
-            {
-                throw new ArgumentException("Length of array.");
-            }
-            this._order = order;
-            this._array = new T[order];
-            Array.Copy(array,0,_array,0,order);
+
+            this._order = array.Length;
+            this._array = new T[_order];
+            Array.Copy(array,0,_array,0,_order);
         }
 
         public DiagonalMatrix(int order, T value)
@@ -69,6 +66,5 @@ namespace Library
                 base.OnElementChange(e);
             }
         }
-
     }
 }
